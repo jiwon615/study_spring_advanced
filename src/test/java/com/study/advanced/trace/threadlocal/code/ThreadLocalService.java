@@ -3,9 +3,9 @@ package com.study.advanced.trace.threadlocal.code;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class FieldLocalService {
+public class ThreadLocalService {
 
-    private ThreadLocal<String> nameStore = new ThreadLocal<>();
+    private ThreadLocal<String> nameStore = new ThreadLocal<>();  // 적용!
 
     public String logic(String name) {
         log.info("저장 name={} -> nameStore={}", name, nameStore.get());

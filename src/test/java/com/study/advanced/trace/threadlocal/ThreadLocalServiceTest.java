@@ -1,17 +1,15 @@
 package com.study.advanced.trace.threadlocal;
 
-import com.study.advanced.trace.threadlocal.code.FieldLocalService;
-import com.study.advanced.trace.threadlocal.code.FieldService;
+import com.study.advanced.trace.threadlocal.code.ThreadLocalService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 /**
- * 동시성 문제 테스트 (A스레드 끝날때까지 대기 후 B스레드 실행하면 문제 없는 것처럼 보이지만.
- * 거의 동시에 A,B스레드 실행하면 동시성 이슈 생기는 결과를 볼 수 있음)
+ * ThreadLocal 테스트
  */
 @Slf4j
-class FieldLocalServiceTest {
-    private FieldLocalService service = new FieldLocalService();
+class ThreadLocalServiceTest {
+    private ThreadLocalService service = new ThreadLocalService();
     //
     @Test
     void field() {
@@ -29,7 +27,7 @@ class FieldLocalServiceTest {
 
         threadA.start(); //A실행
 //        sleep(2000); //동시성 문제 발생X
-        sleep(100); //동시성 문제 발생O
+        sleep(100); //동시성 문제 발생X!!!
         threadB.start(); //B실행
         sleep(3000); //메인 쓰레드 종료 대기
         log.info("main exit");
