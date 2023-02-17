@@ -1,6 +1,7 @@
-package com.study.advanced.trace.threadlocal.code;
+package com.study.advanced.trace.threadlocal;
 
-import com.study.advanced.trace.threadlocal.FieldService;
+import com.study.advanced.trace.threadlocal.code.FieldLocalService;
+import com.study.advanced.trace.threadlocal.code.FieldService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -9,17 +10,17 @@ import org.junit.jupiter.api.Test;
  * 거의 동시에 A,B스레드 실행하면 동시성 이슈 생기는 결과를 볼 수 있음)
  */
 @Slf4j
-class FieldServiceTest {
-    private FieldService fieldService = new FieldService();
+class FieldLocalServiceTest {
+    private FieldLocalService service = new FieldLocalService();
     //
     @Test
     void field() {
         log.info("main start");
         Runnable userA = () -> {
-            fieldService.logic("userA");
+            service.logic("userA");
         };
         Runnable userB = () -> {
-            fieldService.logic("userB");
+            service.logic("userB");
         };
         Thread threadA = new Thread(userA);
         threadA.setName("thread-A");
