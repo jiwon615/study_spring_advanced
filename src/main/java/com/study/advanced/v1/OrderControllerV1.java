@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderControllerV1 {
 
     private final OrderServiceV1 orderService;
-    private final HelloTraceV1 trace;
+    private final HelloTraceV1 trace;  // 적용
 
     @GetMapping("/v1/request")
     public String request(String itemId) {

@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class TraceId {
 
-    private String id;
-    private int level;
+    private String id;  // 트랜잭션 ID
+    private int level;  // 깊이를 표현하는 level
 
     public TraceId() {
         this.id = createId();

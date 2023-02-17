@@ -2,6 +2,9 @@ package com.study.advanced.trace;
 
 import lombok.Getter;
 
+/**
+ * 로그의 상태정보
+ */
 @Getter
 public class TraceStatus {
 
