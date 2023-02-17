@@ -14,7 +14,7 @@ class HelloTraceV2Test {
         TraceStatus status1 = trace.begin("hello1");
         // status1를 통해 동일한 트랜잭션 ID를 유지한체 레벨을 증가하여 beginSync() 실행
         TraceStatus status2 = trace.beginSync(status1.getTraceId(), "hello2");
-        trace.end(status2);
+        trace.end(status2);ㅠ
         trace.end(status1);
     }
 
