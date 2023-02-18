@@ -29,8 +29,8 @@ public class TemplateMethodTest {
                 log.info("비즈니스 로직1 실행");
             }
         };
-        template1.execute();
         log.info("클래스 이름1={}", template1.getClass());
+        template1.execute();
 
         AbstractTemplate template2 = new AbstractTemplate() {
             @Override
@@ -38,7 +38,7 @@ public class TemplateMethodTest {
                 log.info("비즈니스 로직2 실행");
             }
         };
-        template1.execute();
         log.info("클래스 이름2={}", template1.getClass());
+        template1.execute();
     }
 }
