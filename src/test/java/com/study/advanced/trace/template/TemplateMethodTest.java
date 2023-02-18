@@ -1,5 +1,8 @@
-package com.study.advanced.trace.template.code;
+package com.study.advanced.trace.template;
 
+import com.study.advanced.trace.template.code.AbstractTemplate;
+import com.study.advanced.trace.template.code.SubClassLogic1;
+import com.study.advanced.trace.template.code.SubClassLogic2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
