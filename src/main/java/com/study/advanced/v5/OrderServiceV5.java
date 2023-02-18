@@ -2,8 +2,6 @@ package com.study.advanced.v5;
 
 import com.study.advanced.trace.callback.TraceTemplate;
 import com.study.advanced.trace.logtrace.LogTrace;
-import com.study.advanced.trace.template.AbstractTemplate;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -8,6 +8,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * 일반적인 전략 패턴
+ * - Context 에 두고 변하는 부분을 Streategy 로 구현함
+ * - 그리고 Context 의 내부 필드에 Strategy를 주입해서 사용
+ * 이 방식의 단점 : Context, Strategy 조립 이후 전략을 변경하기 번거로움
+ */
 @Slf4j
 public class ContextV1Test {
 
@@ -100,8 +106,8 @@ public class ContextV1Test {
     @Test
     @DisplayName("전략패턴 사용: V3 -> 람다로 변경")
     void strategyV4() {
-        ContextV1 contextV1 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
-        contextV1.execute();
+        ContextV1 contextV1 = new ContextV1(() -> log.info("비즈니스 로직1 실행")); // 선 조립 (Context와 Strategy를 한번 조립)
+        contextV1.execute(); // 후 실행
 
         ContextV1 contextV2 = new ContextV1(() -> log.info("비즈니스 로직2 실행"));
         contextV2.execute();

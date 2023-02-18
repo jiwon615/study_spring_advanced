@@ -5,6 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * 전략 패턴
+ * - 전략을 실행하는 시점에 직접 파라미터로 전달하여 사용
+ * -> Context를 실행하는 시점에는 이미 조립이 끝났기에 전략을 신경쓰지 않고 단순히 실행만 하면 됨
+ * - 장점: 실행할 때마다 전략을 유연하게 변경할 수 있음
+ * - 단점: 실행할 때마다 전략을 계속 지정해주어야 함
+ */
 @Slf4j
 public class ContextV2Test {
 
@@ -20,6 +27,7 @@ public class ContextV2Test {
     @DisplayName("전략 패턴 익명 내부 클래스")
     void strategyV2() {
         ContextV2 context = new ContextV2();
+        // 이렇게 익명클래스 쓰면 execute 안에서 내가 실행할 코드를 넘기는 것
         context.execute(new Strategy() {
             @Override
             public void call() {
