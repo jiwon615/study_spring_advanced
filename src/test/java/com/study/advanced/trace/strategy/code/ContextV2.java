@@ -1,0 +1,22 @@
+package com.study.advanced.trace.strategy.code;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 조금 전략패턴을 다르게 사용 (전략을 실행할 때 직접 파라미터로 전달해서 사용하는 방식)
+ */
+@Slf4j
+public class ContextV2 {
+
+    public void execute(Strategy strategy) {
+        long startTime = System.currentTimeMillis();
+
+        // 비즈니스 로직 실행
+        strategy.call(); // 위임
+        // 비즈니스 로직 종료
+
+        long endTime = System.currentTimeMillis();
+        long resultTime = endTime - startTime;
+        log.info("resultTime={}", resultTime);
+    }
+}
